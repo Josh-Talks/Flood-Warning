@@ -6,7 +6,7 @@ geographical data.
 
 """
 
-from .utils import sorted_by_key  # noqa
+from utils import sorted_by_key  # noqa
 from haversine import haversine   # formula to calculate distance between two coordinates
 
 def stations_by_distance(stations, p):  
