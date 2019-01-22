@@ -48,3 +48,21 @@ def stations_by_river(stations):
             station_dict[station.river] = [station.name]
     
     return station_dict
+
+def rivers_by_station_number(stations, N):
+    rivers = []
+    num_stations = []
+    for station in stations:
+        if station.river in rivers:
+            num_stations[rivers.index(station.river)] += 1
+        else:
+            rivers.append(station.river)
+            num_stations.append(1)
+    num_stations_on_river = []        
+    for i in range(len(rivers)):
+        num_stations_on_river.append((rivers[i], num_stations[i]))
+    
+    num_stations_on_river = sorted_by_key(num_stations_on_river, 1, reverse=True)
+
+    return num_stations_on_river
+            
