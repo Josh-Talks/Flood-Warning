@@ -40,11 +40,11 @@ def rivers_with_station(stations):
     return rivers_list
 
 def stations_by_river(stations):
-    river_stations = {}
+    station_dict = {}
     for station in stations:
-        if station.river in river_stations:
-            river_stations[station.name] = [x.append for x in river_stations[station.name]]
+        if station.river in station_dict:
+            station_dict[station.river].append(station.name)
         else:
-            river_stations[station.river] = [station.name]
+            station_dict[station.river] = [station.name]
     
-    return river_stations
+    return station_dict
