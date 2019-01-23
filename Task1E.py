@@ -2,9 +2,8 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import *
 
 def run():
-    """Requirements for Task 1C"""
+    """Requirements for Task 1E"""
 
-    # Build list of tuples of station names and distance 
     stations = build_station_list()
     
     N = 9
@@ -18,5 +17,5 @@ def run():
    
 
 if __name__ == "__main__":
-    print("*** Task 1C: CUED Part IA Flood Warning System ***")
+    print("*** Task 1E: CUED Part IA Flood Warning System ***")
     run()
