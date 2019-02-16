@@ -11,7 +11,7 @@ def run():
 
     stations_at_risk = station_level_over_threshold(stations, 0.8)
     for i in range(len(stations_at_risk)):
-        print(stations_at_risk[i])
+        print(str(stations_at_risk[i][0]) + " " + str(stations_at_risk[i][1]))
 
 
 
