@@ -15,7 +15,7 @@ def stations_highest_rel_level(stations, N):
         if type(station.relative_water_level()) != float:
             continue
         else:
-            unsorted_stations.append((station.name, station.relative_water_level()))
+            unsorted_stations.append((station, station.relative_water_level()))
     stations_by_level = sorted(unsorted_stations, reverse=True, key=lambda level: level[1])
     first_N = stations_by_level[0:N]
     return first_N
