@@ -11,7 +11,7 @@ def run():
 
     highest_rel = stations_highest_rel_level(stations, 10)
     for i in range(len(highest_rel)):
-        print(str(highest_rel[i][0]) + " " + str(highest_rel[i][1]))
+        print(str(highest_rel[i][0].name) + " " + str(highest_rel[i][1]))
 
 if __name__ == "__main__":
     print("*** Task 2B: CUED Part IA Flood Warning System ***")
