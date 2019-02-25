@@ -2,6 +2,7 @@ from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import *
 from floodsystem.flood import *
 from floodsystem.plot import *
+import datetime
 
 def run():
     # Build list of stations
@@ -19,7 +20,7 @@ def run():
  
 
 if __name__ == "__main__":
-    print("*** Task 2B: CUED Part IA Flood Warning System ***")
+    print("*** Task 2E: CUED Part IA Flood Warning System ***")
     run()
 
     
