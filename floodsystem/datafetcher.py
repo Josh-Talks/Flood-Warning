@@ -26,7 +26,7 @@ def dump(data, filename):
     f = open(filename, 'w')
     data = json.dump(data, f)
     f.close()
-    return data
+
 
 
 def load(filename):
