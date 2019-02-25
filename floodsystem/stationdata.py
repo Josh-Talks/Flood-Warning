@@ -25,6 +25,11 @@ def build_station_list(use_cache=True):
 
     # Build list of MonitoringStation objects
     stations = []
+
+    # Build dictionary of measure_id:station_id pairs
+
+    stationDict = {}
+
     for e in data["items"]:
         # Extract town string (not always available)
         town = None
@@ -55,6 +60,7 @@ def build_station_list(use_cache=True):
                 river=river,
                 town=town)
             stations.append(s)
+        
         except Exception:
             # Not all required data on the station was available, so
             # skip over

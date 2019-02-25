@@ -26,6 +26,7 @@ def dump(data, filename):
     f = open(filename, 'w')
     data = json.dump(data, f)
     f.close()
+    return data
 
 
 def load(filename):
@@ -126,6 +127,12 @@ def fetch_measure_levels(measure_id, dt):
 
     # Fetch data
     data = fetch(url)
+
+
+    print(data)
+    # find out whether station_id is unique for a certain measure_id
+    # station_id = data[sth][sthelse]...[station_id]
+
 
     # Extract dates and levels
     dates, levels = [], []

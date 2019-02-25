@@ -5,7 +5,6 @@ def run():
     """Requirements for Task 1E"""
 
     stations = build_station_list()
-    
     N = 9
     rivers_by_num_stations = rivers_by_station_number(stations, N)
     for river in rivers_by_num_stations[9:]:
