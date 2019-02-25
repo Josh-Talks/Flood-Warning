@@ -1,12 +1,12 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import matplotlib
 from datetime import datetime, timedelta
 from datafetcher import *
 
-def polyfit(dates, level, o):
-    dates
+def polyfit(dates, levels, p):
     x = matplotlib.dates.date2num(dates)
-    y = level
+    y = levels
     p_coeff = np.polyfit(x - x[0], y , 4)
     poly = np.poly1d(p_coeff)
     plt.plot(x, y, '.')
