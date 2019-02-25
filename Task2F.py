@@ -12,12 +12,13 @@ def run():
     # Update latest level data for all stations
     update_water_levels(stations)
     highest_rel = stations_highest_rel_level(stations, 5)
+    
     for data in highest_rel:
         station = data[0]
         dt = 2
         p = 4
         dates, levels = fetch_measure_levels(station.measure_id,dt=datetime.timedelta(days=dt))
-        polyfit(dates, levels, p)
+        plot_water_level_with_fit(data[0], dates, levels, p)
         
 
 if __name__ == "__main__":
