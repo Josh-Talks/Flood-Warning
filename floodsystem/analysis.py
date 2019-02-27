@@ -15,7 +15,5 @@ def polyfit(dates, levels, p):
         return None
 
 def current_gradient(poly):
-    poly = np.asarray(poly)
-    grad = np.gradient(poly)
-    current_grad = float(grad[-1])
-    return current_grad
+    grad = np.polyder(poly)
+    
