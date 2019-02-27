@@ -10,10 +10,16 @@ def build_sample_data():
     trange = [(0.1,0.2), (0.2,0.3), (0.3,0.4), (0.5,0.4), (None)]
     river = ['river1', 'river2', 'river3', 'river4', 'river1']
     town = ['town1', 'town2', 'town3', 'town4', 'town5']
+    current_level = [0.15, 0.27, 0.39, 0.51, None]
 
     station_data = []
     for n in range(len(town)):
         s = MonitoringStation(s_id[n], m_id[n], label[n], coord[n], trange[n], river[n], town[n])
         station_data.append(s)
+
+    i = 0 
+    for station in station_data:
+        station.latest_level = current_level[i]
+        i += 1
 
     return station_data
