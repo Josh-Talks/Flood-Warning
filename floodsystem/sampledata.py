@@ -8,7 +8,7 @@ def build_sample_data():
     label = ['label1', 'label2', 'label3', 'label4', 'label5']
     coord = [(1,1),(2,2), (3,3), (4,4), (5,5)]
     trange = [(0.1,0.2), (0.2,0.3), (0.3,0.4), (0.5,0.4), (None)]
-    river = ['river1', 'river2', 'river3', 'river4', 'river5']
+    river = ['river1', 'river2', 'river3', 'river4', 'river1']
     town = ['town1', 'town2', 'town3', 'town4', 'town5']
 
     station_data = []
