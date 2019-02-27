@@ -15,25 +15,20 @@ def run():
     dt = 2
     p = 4
     level_tol = 0.9
-    gradient_tol = 0.001
+    gradient_tol = -1.0
     at_risk = station_level_over_thresh(stations, level_tol)
     gonna_flood = []
     for station in at_risk:
         dates, levels = fetch_measure_levels(station.measure_id,dt=datetime.timedelta(days=dt))
         if polyfit(dates, levels, p) != None:
-            poly, x = polyfit(dates, levels, p)
-            print(poly)
-            current_grad = current_gradient(poly)
-            if station_at_risk(station, current_grad, level_tol, gradient_tol) == True:
-                at_risk.append(station.name)
+            poly, x, poly_deriv = polyfit(dates, levels, p)
+            current_grad = current_gradient(poly, dates, levels, p)
+            print(current_grad)
+            if station_at_risk(current_grad, gradient_tol) == True:
+                gonna_flood.append(station.town)
+    
+#towns at risk off flooding          
     print(gonna_flood)
-        
-    
-   
-        
-
-    
-    
         
 
 if __name__ == "__main__":

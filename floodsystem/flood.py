@@ -33,15 +33,11 @@ def station_level_over_thresh(stations, tol):
             stations_above_tol.append(station)
     return stations_above_tol
 
-def station_at_risk(station, current_grad, level_tol, gradient_tol=0):
-    if type(station.relative_water_level()) != float:
-        return False
-    elif type(current_grad) != float:
-        return False
-    elif current_grad > gradient_tol and station.relative_water_level() > level_tol:
+def station_at_risk(current_grad, gradient_tol=0):
+    if current_grad > gradient_tol:
         return True
     else:
-        return False
+        print(current_grad)
         
 
     

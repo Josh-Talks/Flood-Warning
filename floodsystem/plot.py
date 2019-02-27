@@ -10,8 +10,6 @@ def plot_water_levels(station, dates, levels):
     plt.plot(dates, levels, 'b')
     high_level = station.typical_range[1]
     low_level = station.typical_range[0]
-    # plt.plot(t, high_level, 'r')
-    # plt.plot(t, low_level, 'b')
     plt.axhline(y=high_level, color='r', linestyle='-', label = "high level")
     plt.axhline(y=low_level, color='g', linestyle='-', label = "low level")
 
@@ -28,7 +26,7 @@ def plot_water_levels(station, dates, levels):
 
 
 def plot_water_level_with_fit(station, dates, levels, p):
-    poly, x = polyfit(dates, levels, p)
+    poly, x, poly_deriv = polyfit(dates, levels, p)
     plt.plot(dates, levels, '.')
     x1 = np.linspace(x[0], x[-1], 30)
     plt.plot(x1, poly(x1 - x[0]))

@@ -10,10 +10,17 @@ def polyfit(dates, levels, p):
         d0 = x[0]
         p_coeff = np.polyfit(x-d0, levels, p)
         poly = np.poly1d(p_coeff)
-        return poly, x
+        poly_deriv = poly.deriv(m=1)
+        print(poly_deriv)
+        return poly, x, poly_deriv
     else:
         return None
 
-def current_gradient(poly):
-    grad = np.polyder(poly)
-    
+def current_gradient(poly, dates, levels, p):
+    poly, x, poly_deriv = polyfit(dates, levels, p)
+    x1 = np.linspace(x[0], x[-1], 30)
+    current_grad = poly_deriv(x1[-1] - x[0])
+    print("current gradient")
+    print(current_grad)
+
+    return current_grad
