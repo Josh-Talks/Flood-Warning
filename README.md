@@ -1,8 +1,4 @@
-# CUED Part IA Flood Warning System
+# Flood Warning System
+Python project to create a real time flood warning defense system for English rivers. We made use of Pytest for a test-driven development process, pre writing test modules for what we wanted each major section of the flood warning code to achieve.
 
-This is the Part IA Lent Term computing activity at the Department of
-Engineering, University of Cambridge.
-
-The activity is documented at
-https://cued-partia-flood-warning.readthedocs.io/. Fork this repository
-to start the activity.
+We took live data from the environment agency website on current water levels in rivers across England and then assimilated and analysed the data in order to predict possible floods by comparing the data to past events and looking for correlations and trends.
